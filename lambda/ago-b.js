@@ -1,9 +1,15 @@
+var __defProp = Object.defineProperty;
+var __markAsModule = (target) => __defProp(target, "__esModule", {value: true});
 var __commonJS = (callback, module2) => () => {
   if (!module2) {
     module2 = {exports: {}};
     callback(module2.exports, module2);
   }
   return module2.exports;
+};
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, {get: all[name], enumerable: true});
 };
 
 // node_modules/@babel/runtime/helpers/interopRequireDefault.js
@@ -2023,56 +2029,56 @@ var require_tinycolor = __commonJS((exports2, module2) => {
       } else if (color == "transparent") {
         return {r: 0, g: 0, b: 0, a: 0, format: "name"};
       }
-      var match;
-      if (match = matchers.rgb.exec(color)) {
-        return {r: match[1], g: match[2], b: match[3]};
+      var match2;
+      if (match2 = matchers.rgb.exec(color)) {
+        return {r: match2[1], g: match2[2], b: match2[3]};
       }
-      if (match = matchers.rgba.exec(color)) {
-        return {r: match[1], g: match[2], b: match[3], a: match[4]};
+      if (match2 = matchers.rgba.exec(color)) {
+        return {r: match2[1], g: match2[2], b: match2[3], a: match2[4]};
       }
-      if (match = matchers.hsl.exec(color)) {
-        return {h: match[1], s: match[2], l: match[3]};
+      if (match2 = matchers.hsl.exec(color)) {
+        return {h: match2[1], s: match2[2], l: match2[3]};
       }
-      if (match = matchers.hsla.exec(color)) {
-        return {h: match[1], s: match[2], l: match[3], a: match[4]};
+      if (match2 = matchers.hsla.exec(color)) {
+        return {h: match2[1], s: match2[2], l: match2[3], a: match2[4]};
       }
-      if (match = matchers.hsv.exec(color)) {
-        return {h: match[1], s: match[2], v: match[3]};
+      if (match2 = matchers.hsv.exec(color)) {
+        return {h: match2[1], s: match2[2], v: match2[3]};
       }
-      if (match = matchers.hsva.exec(color)) {
-        return {h: match[1], s: match[2], v: match[3], a: match[4]};
+      if (match2 = matchers.hsva.exec(color)) {
+        return {h: match2[1], s: match2[2], v: match2[3], a: match2[4]};
       }
-      if (match = matchers.hex8.exec(color)) {
+      if (match2 = matchers.hex8.exec(color)) {
         return {
-          r: parseIntFromHex(match[1]),
-          g: parseIntFromHex(match[2]),
-          b: parseIntFromHex(match[3]),
-          a: convertHexToDecimal(match[4]),
+          r: parseIntFromHex(match2[1]),
+          g: parseIntFromHex(match2[2]),
+          b: parseIntFromHex(match2[3]),
+          a: convertHexToDecimal(match2[4]),
           format: named ? "name" : "hex8"
         };
       }
-      if (match = matchers.hex6.exec(color)) {
+      if (match2 = matchers.hex6.exec(color)) {
         return {
-          r: parseIntFromHex(match[1]),
-          g: parseIntFromHex(match[2]),
-          b: parseIntFromHex(match[3]),
+          r: parseIntFromHex(match2[1]),
+          g: parseIntFromHex(match2[2]),
+          b: parseIntFromHex(match2[3]),
           format: named ? "name" : "hex"
         };
       }
-      if (match = matchers.hex4.exec(color)) {
+      if (match2 = matchers.hex4.exec(color)) {
         return {
-          r: parseIntFromHex(match[1] + "" + match[1]),
-          g: parseIntFromHex(match[2] + "" + match[2]),
-          b: parseIntFromHex(match[3] + "" + match[3]),
-          a: convertHexToDecimal(match[4] + "" + match[4]),
+          r: parseIntFromHex(match2[1] + "" + match2[1]),
+          g: parseIntFromHex(match2[2] + "" + match2[2]),
+          b: parseIntFromHex(match2[3] + "" + match2[3]),
+          a: convertHexToDecimal(match2[4] + "" + match2[4]),
           format: named ? "name" : "hex8"
         };
       }
-      if (match = matchers.hex3.exec(color)) {
+      if (match2 = matchers.hex3.exec(color)) {
         return {
-          r: parseIntFromHex(match[1] + "" + match[1]),
-          g: parseIntFromHex(match[2] + "" + match[2]),
-          b: parseIntFromHex(match[3] + "" + match[3]),
+          r: parseIntFromHex(match2[1] + "" + match2[1]),
+          g: parseIntFromHex(match2[2] + "" + match2[2]),
+          b: parseIntFromHex(match2[3] + "" + match2[3]),
           format: named ? "name" : "hex"
         };
       }
@@ -11538,7 +11544,7 @@ var require_deflate = __commonJS((exports2) => {
   function longest_match(s, cur_match) {
     var chain_length = s.max_chain_length;
     var scan = s.strstart;
-    var match;
+    var match2;
     var len;
     var best_len = s.prev_length;
     var nice_match = s.nice_match;
@@ -11556,14 +11562,14 @@ var require_deflate = __commonJS((exports2) => {
       nice_match = s.lookahead;
     }
     do {
-      match = cur_match;
-      if (_win[match + best_len] !== scan_end || _win[match + best_len - 1] !== scan_end1 || _win[match] !== _win[scan] || _win[++match] !== _win[scan + 1]) {
+      match2 = cur_match;
+      if (_win[match2 + best_len] !== scan_end || _win[match2 + best_len - 1] !== scan_end1 || _win[match2] !== _win[scan] || _win[++match2] !== _win[scan + 1]) {
         continue;
       }
       scan += 2;
-      match++;
+      match2++;
       do {
-      } while (_win[++scan] === _win[++match] && _win[++scan] === _win[++match] && _win[++scan] === _win[++match] && _win[++scan] === _win[++match] && _win[++scan] === _win[++match] && _win[++scan] === _win[++match] && _win[++scan] === _win[++match] && _win[++scan] === _win[++match] && scan < strend);
+      } while (_win[++scan] === _win[++match2] && _win[++scan] === _win[++match2] && _win[++scan] === _win[++match2] && _win[++scan] === _win[++match2] && _win[++scan] === _win[++match2] && _win[++scan] === _win[++match2] && _win[++scan] === _win[++match2] && _win[++scan] === _win[++match2] && scan < strend);
       len = MAX_MATCH - (strend - scan);
       scan = strend - MAX_MATCH;
       if (len > best_len) {
@@ -14726,12 +14732,12 @@ var require_inflate2 = __commonJS((exports2) => {
 // node_modules/pako/index.js
 var require_pako = __commonJS((exports2, module2) => {
   "use strict";
-  var assign = require_common().assign;
+  var assign2 = require_common().assign;
   var deflate = require_deflate2();
   var inflate = require_inflate2();
   var constants = require_constants3();
   var pako = {};
-  assign(pako, deflate, inflate, constants);
+  assign2(pako, deflate, inflate, constants);
   module2.exports = pako;
 });
 
@@ -19536,8 +19542,8 @@ var require_iq = __commonJS((exports2, module2) => {
             this._sums = createArray1D(this._colors + 1);
             for (var index = 0, l = this._pixels.length; index < l; index++) {
               var color = this._pixels[index];
-              var match = -1;
-              var bestMatch = match, bestDistance = Number.MAX_VALUE;
+              var match2 = -1;
+              var bestMatch = match2, bestDistance = Number.MAX_VALUE;
               for (var lookup = 0; lookup < this._colors; lookup++) {
                 var foundRed = lookupRed[lookup], foundGreen = lookupGreen[lookup], foundBlue = lookupBlue[lookup], foundAlpha = lookupAlpha[lookup];
                 var distance = this._distance.calculateRaw(foundRed, foundGreen, foundBlue, foundAlpha, color.r, color.g, color.b, color.a);
@@ -22399,8 +22405,8 @@ var require_defaults = __commonJS((exports2) => {
 // node_modules/xmlbuilder/lib/Utility.js
 var require_Utility = __commonJS((exports2, module2) => {
   (function() {
-    var assign, getValue, isArray, isEmpty, isFunction, isObject, isPlainObject, slice = [].slice, hasProp = {}.hasOwnProperty;
-    assign = function() {
+    var assign2, getValue, isArray, isEmpty, isFunction, isObject, isPlainObject, slice = [].slice, hasProp = {}.hasOwnProperty;
+    assign2 = function() {
       var i, key, len, source, sources, target;
       target = arguments[0], sources = 2 <= arguments.length ? slice.call(arguments, 1) : [];
       if (isFunction(Object.assign)) {
@@ -22457,7 +22463,7 @@ var require_Utility = __commonJS((exports2, module2) => {
         return obj;
       }
     };
-    module2.exports.assign = assign;
+    module2.exports.assign = assign2;
     module2.exports.isFunction = isFunction;
     module2.exports.isObject = isObject;
     module2.exports.isArray = isArray;
@@ -24804,8 +24810,8 @@ var require_WriterState = __commonJS((exports2, module2) => {
 // node_modules/xmlbuilder/lib/XMLWriterBase.js
 var require_XMLWriterBase = __commonJS((exports2, module2) => {
   (function() {
-    var NodeType, WriterState, XMLCData, XMLComment, XMLDTDAttList, XMLDTDElement, XMLDTDEntity, XMLDTDNotation, XMLDeclaration, XMLDocType, XMLDummy, XMLElement, XMLProcessingInstruction, XMLRaw, XMLText, XMLWriterBase, assign, hasProp = {}.hasOwnProperty;
-    assign = require_Utility().assign;
+    var NodeType, WriterState, XMLCData, XMLComment, XMLDTDAttList, XMLDTDElement, XMLDTDEntity, XMLDTDNotation, XMLDeclaration, XMLDocType, XMLDummy, XMLElement, XMLProcessingInstruction, XMLRaw, XMLText, XMLWriterBase, assign2, hasProp = {}.hasOwnProperty;
+    assign2 = require_Utility().assign;
     NodeType = require_NodeType();
     XMLDeclaration = require_XMLDeclaration();
     XMLDocType = require_XMLDocType();
@@ -24838,7 +24844,7 @@ var require_XMLWriterBase = __commonJS((exports2, module2) => {
       XMLWriterBase2.prototype.filterOptions = function(options) {
         var filteredOptions, ref, ref1, ref2, ref3, ref4, ref5, ref6;
         options || (options = {});
-        options = assign({}, this.options, options);
+        options = assign2({}, this.options, options);
         filteredOptions = {
           writer: this
         };
@@ -26081,8 +26087,8 @@ var require_XMLStreamWriter = __commonJS((exports2, module2) => {
 // node_modules/xmlbuilder/lib/index.js
 var require_lib = __commonJS((exports2, module2) => {
   (function() {
-    var NodeType, WriterState, XMLDOMImplementation, XMLDocument, XMLDocumentCB, XMLStreamWriter, XMLStringWriter, assign, isFunction, ref;
-    ref = require_Utility(), assign = ref.assign, isFunction = ref.isFunction;
+    var NodeType, WriterState, XMLDOMImplementation, XMLDocument, XMLDocumentCB, XMLStreamWriter, XMLStringWriter, assign2, isFunction, ref;
+    ref = require_Utility(), assign2 = ref.assign, isFunction = ref.isFunction;
     XMLDOMImplementation = require_XMLDOMImplementation();
     XMLDocument = require_XMLDocument();
     XMLDocumentCB = require_XMLDocumentCB();
@@ -26095,7 +26101,7 @@ var require_lib = __commonJS((exports2, module2) => {
       if (name == null) {
         throw new Error("Root element needs a name.");
       }
-      options = assign({}, xmldec, doctype, options);
+      options = assign2({}, xmldec, doctype, options);
       doc = new XMLDocument(options);
       root = doc.element(name);
       if (!options.headless) {
@@ -29070,7 +29076,7 @@ var require_resize2 = __commonJS((exports2, module2) => {
         }
         return Math.round((k - kMin) * vMax + (kMax - k) * vMin);
       };
-      var assign = function assign2(pos, offset, x2, xMin2, xMax2, y2, yMin2, yMax2) {
+      var assign2 = function assign3(pos, offset, x2, xMin2, xMax2, y2, yMin2, yMax2) {
         var posMin = (yMin2 * wSrc + xMin2) * 4 + offset;
         var posMax = (yMin2 * wSrc + xMax2) * 4 + offset;
         var vMin = interpolate(x2, xMin2, bufSrc[posMin], xMax2, bufSrc[posMax]);
@@ -29092,10 +29098,10 @@ var require_resize2 = __commonJS((exports2, module2) => {
           var y = i * hSrc / hDst;
           var yMin = Math.floor(y);
           var yMax = Math.min(Math.ceil(y), hSrc - 1);
-          assign(posDst, 0, x, xMin, xMax, y, yMin, yMax);
-          assign(posDst, 1, x, xMin, xMax, y, yMin, yMax);
-          assign(posDst, 2, x, xMin, xMax, y, yMin, yMax);
-          assign(posDst, 3, x, xMin, xMax, y, yMin, yMax);
+          assign2(posDst, 0, x, xMin, xMax, y, yMin, yMax);
+          assign2(posDst, 1, x, xMin, xMax, y, yMin, yMax);
+          assign2(posDst, 2, x, xMin, xMax, y, yMin, yMax);
+          assign2(posDst, 3, x, xMin, xMax, y, yMin, yMax);
         }
       }
     },
@@ -29589,993 +29595,689 @@ var require_dist32 = __commonJS((exports2, module2) => {
   module2.exports = exports2.default;
 });
 
-// node_modules/date-fns/_lib/requiredArgs/index.js
-var require_requiredArgs = __commonJS((exports2, module2) => {
-  "use strict";
-  Object.defineProperty(exports2, "__esModule", {
-    value: true
+// node_modules/date-fns/esm/formatDistance/index.js
+var require_formatDistance = __commonJS((exports2) => {
+  __markAsModule(exports2);
+  __export(exports2, {
+    default: () => formatDistance3
   });
-  exports2.default = requiredArgs;
-  function requiredArgs(required, args) {
-    if (args.length < required) {
-      throw new TypeError(required + " argument" + (required > 1 ? "s" : "") + " required, but only " + args.length + " present");
-    }
-  }
-  module2.exports = exports2.default;
-});
-
-// node_modules/date-fns/toDate/index.js
-var require_toDate = __commonJS((exports2, module2) => {
-  "use strict";
-  Object.defineProperty(exports2, "__esModule", {
-    value: true
-  });
-  exports2.default = toDate;
-  var _index = _interopRequireDefault(require_requiredArgs());
-  function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {default: obj};
-  }
-  function toDate(argument) {
-    (0, _index.default)(1, arguments);
-    var argStr = Object.prototype.toString.call(argument);
-    if (argument instanceof Date || typeof argument === "object" && argStr === "[object Date]") {
-      return new Date(argument.getTime());
-    } else if (typeof argument === "number" || argStr === "[object Number]") {
-      return new Date(argument);
-    } else {
-      if ((typeof argument === "string" || argStr === "[object String]") && typeof console !== "undefined") {
-        console.warn("Starting with v2.0.0-beta.1 date-fns doesn't accept strings as date arguments. Please use `parseISO` to parse strings. See: https://git.io/fjule");
-        console.warn(new Error().stack);
-      }
-      return new Date(NaN);
-    }
-  }
-  module2.exports = exports2.default;
-});
-
-// node_modules/date-fns/compareAsc/index.js
-var require_compareAsc = __commonJS((exports2, module2) => {
-  "use strict";
-  Object.defineProperty(exports2, "__esModule", {
-    value: true
-  });
-  exports2.default = compareAsc;
-  var _index = _interopRequireDefault(require_toDate());
-  var _index2 = _interopRequireDefault(require_requiredArgs());
-  function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {default: obj};
-  }
-  function compareAsc(dirtyDateLeft, dirtyDateRight) {
-    (0, _index2.default)(2, arguments);
-    var dateLeft = (0, _index.default)(dirtyDateLeft);
-    var dateRight = (0, _index.default)(dirtyDateRight);
-    var diff = dateLeft.getTime() - dateRight.getTime();
-    if (diff < 0) {
-      return -1;
-    } else if (diff > 0) {
-      return 1;
-    } else {
-      return diff;
-    }
-  }
-  module2.exports = exports2.default;
-});
-
-// node_modules/date-fns/differenceInCalendarMonths/index.js
-var require_differenceInCalendarMonths = __commonJS((exports2, module2) => {
-  "use strict";
-  Object.defineProperty(exports2, "__esModule", {
-    value: true
-  });
-  exports2.default = differenceInCalendarMonths;
-  var _index = _interopRequireDefault(require_toDate());
-  var _index2 = _interopRequireDefault(require_requiredArgs());
-  function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {default: obj};
-  }
-  function differenceInCalendarMonths(dirtyDateLeft, dirtyDateRight) {
-    (0, _index2.default)(2, arguments);
-    var dateLeft = (0, _index.default)(dirtyDateLeft);
-    var dateRight = (0, _index.default)(dirtyDateRight);
-    var yearDiff = dateLeft.getFullYear() - dateRight.getFullYear();
-    var monthDiff = dateLeft.getMonth() - dateRight.getMonth();
-    return yearDiff * 12 + monthDiff;
-  }
-  module2.exports = exports2.default;
-});
-
-// node_modules/date-fns/endOfDay/index.js
-var require_endOfDay = __commonJS((exports2, module2) => {
-  "use strict";
-  Object.defineProperty(exports2, "__esModule", {
-    value: true
-  });
-  exports2.default = endOfDay;
-  var _index = _interopRequireDefault(require_toDate());
-  var _index2 = _interopRequireDefault(require_requiredArgs());
-  function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {default: obj};
-  }
-  function endOfDay(dirtyDate) {
-    (0, _index2.default)(1, arguments);
-    var date = (0, _index.default)(dirtyDate);
-    date.setHours(23, 59, 59, 999);
-    return date;
-  }
-  module2.exports = exports2.default;
-});
-
-// node_modules/date-fns/endOfMonth/index.js
-var require_endOfMonth = __commonJS((exports2, module2) => {
-  "use strict";
-  Object.defineProperty(exports2, "__esModule", {
-    value: true
-  });
-  exports2.default = endOfMonth;
-  var _index = _interopRequireDefault(require_toDate());
-  var _index2 = _interopRequireDefault(require_requiredArgs());
-  function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {default: obj};
-  }
-  function endOfMonth(dirtyDate) {
-    (0, _index2.default)(1, arguments);
-    var date = (0, _index.default)(dirtyDate);
-    var month = date.getMonth();
-    date.setFullYear(date.getFullYear(), month + 1, 0);
-    date.setHours(23, 59, 59, 999);
-    return date;
-  }
-  module2.exports = exports2.default;
-});
-
-// node_modules/date-fns/isLastDayOfMonth/index.js
-var require_isLastDayOfMonth = __commonJS((exports2, module2) => {
-  "use strict";
-  Object.defineProperty(exports2, "__esModule", {
-    value: true
-  });
-  exports2.default = isLastDayOfMonth;
-  var _index = _interopRequireDefault(require_toDate());
-  var _index2 = _interopRequireDefault(require_endOfDay());
-  var _index3 = _interopRequireDefault(require_endOfMonth());
-  var _index4 = _interopRequireDefault(require_requiredArgs());
-  function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {default: obj};
-  }
-  function isLastDayOfMonth(dirtyDate) {
-    (0, _index4.default)(1, arguments);
-    var date = (0, _index.default)(dirtyDate);
-    return (0, _index2.default)(date).getTime() === (0, _index3.default)(date).getTime();
-  }
-  module2.exports = exports2.default;
-});
-
-// node_modules/date-fns/differenceInMonths/index.js
-var require_differenceInMonths = __commonJS((exports2, module2) => {
-  "use strict";
-  Object.defineProperty(exports2, "__esModule", {
-    value: true
-  });
-  exports2.default = differenceInMonths;
-  var _index = _interopRequireDefault(require_toDate());
-  var _index2 = _interopRequireDefault(require_differenceInCalendarMonths());
-  var _index3 = _interopRequireDefault(require_compareAsc());
-  var _index4 = _interopRequireDefault(require_requiredArgs());
-  var _index5 = _interopRequireDefault(require_isLastDayOfMonth());
-  function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {default: obj};
-  }
-  function differenceInMonths(dirtyDateLeft, dirtyDateRight) {
-    (0, _index4.default)(2, arguments);
-    var dateLeft = (0, _index.default)(dirtyDateLeft);
-    var dateRight = (0, _index.default)(dirtyDateRight);
-    var sign = (0, _index3.default)(dateLeft, dateRight);
-    var difference = Math.abs((0, _index2.default)(dateLeft, dateRight));
-    if (dateLeft.getMonth() === 1 && dateLeft.getDate() > 27) {
-      dateLeft.setDate(30);
-    }
-    dateLeft.setMonth(dateLeft.getMonth() - sign * difference);
-    var isLastMonthNotFull = (0, _index3.default)(dateLeft, dateRight) === -sign;
-    if ((0, _index5.default)((0, _index.default)(dirtyDateLeft)) && difference === 1 && (0, _index3.default)(dirtyDateLeft, dateRight) === 1) {
-      isLastMonthNotFull = false;
-    }
-    var result = sign * (difference - isLastMonthNotFull);
-    return result === 0 ? 0 : result;
-  }
-  module2.exports = exports2.default;
-});
-
-// node_modules/date-fns/differenceInMilliseconds/index.js
-var require_differenceInMilliseconds = __commonJS((exports2, module2) => {
-  "use strict";
-  Object.defineProperty(exports2, "__esModule", {
-    value: true
-  });
-  exports2.default = differenceInMilliseconds;
-  var _index = _interopRequireDefault(require_toDate());
-  var _index2 = _interopRequireDefault(require_requiredArgs());
-  function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {default: obj};
-  }
-  function differenceInMilliseconds(dirtyDateLeft, dirtyDateRight) {
-    (0, _index2.default)(2, arguments);
-    var dateLeft = (0, _index.default)(dirtyDateLeft);
-    var dateRight = (0, _index.default)(dirtyDateRight);
-    return dateLeft.getTime() - dateRight.getTime();
-  }
-  module2.exports = exports2.default;
-});
-
-// node_modules/date-fns/differenceInSeconds/index.js
-var require_differenceInSeconds = __commonJS((exports2, module2) => {
-  "use strict";
-  Object.defineProperty(exports2, "__esModule", {
-    value: true
-  });
-  exports2.default = differenceInSeconds;
-  var _index = _interopRequireDefault(require_differenceInMilliseconds());
-  var _index2 = _interopRequireDefault(require_requiredArgs());
-  function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {default: obj};
-  }
-  function differenceInSeconds(dirtyDateLeft, dirtyDateRight) {
-    (0, _index2.default)(2, arguments);
-    var diff = (0, _index.default)(dirtyDateLeft, dirtyDateRight) / 1e3;
-    return diff > 0 ? Math.floor(diff) : Math.ceil(diff);
-  }
-  module2.exports = exports2.default;
-});
-
-// node_modules/date-fns/locale/en-US/_lib/formatDistance/index.js
-var require_formatDistance = __commonJS((exports2, module2) => {
-  "use strict";
-  Object.defineProperty(exports2, "__esModule", {
-    value: true
-  });
-  exports2.default = formatDistance2;
-  var formatDistanceLocale = {
-    lessThanXSeconds: {
-      one: "less than a second",
-      other: "less than {{count}} seconds"
-    },
-    xSeconds: {
-      one: "1 second",
-      other: "{{count}} seconds"
-    },
-    halfAMinute: "half a minute",
-    lessThanXMinutes: {
-      one: "less than a minute",
-      other: "less than {{count}} minutes"
-    },
-    xMinutes: {
-      one: "1 minute",
-      other: "{{count}} minutes"
-    },
-    aboutXHours: {
-      one: "about 1 hour",
-      other: "about {{count}} hours"
-    },
-    xHours: {
-      one: "1 hour",
-      other: "{{count}} hours"
-    },
-    xDays: {
-      one: "1 day",
-      other: "{{count}} days"
-    },
-    aboutXWeeks: {
-      one: "about 1 week",
-      other: "about {{count}} weeks"
-    },
-    xWeeks: {
-      one: "1 week",
-      other: "{{count}} weeks"
-    },
-    aboutXMonths: {
-      one: "about 1 month",
-      other: "about {{count}} months"
-    },
-    xMonths: {
-      one: "1 month",
-      other: "{{count}} months"
-    },
-    aboutXYears: {
-      one: "about 1 year",
-      other: "about {{count}} years"
-    },
-    xYears: {
-      one: "1 year",
-      other: "{{count}} years"
-    },
-    overXYears: {
-      one: "over 1 year",
-      other: "over {{count}} years"
-    },
-    almostXYears: {
-      one: "almost 1 year",
-      other: "almost {{count}} years"
-    }
-  };
-  function formatDistance2(token, count, options) {
-    options = options || {};
-    var result;
-    if (typeof formatDistanceLocale[token] === "string") {
-      result = formatDistanceLocale[token];
-    } else if (count === 1) {
-      result = formatDistanceLocale[token].one;
-    } else {
-      result = formatDistanceLocale[token].other.replace("{{count}}", count);
-    }
-    if (options.addSuffix) {
-      if (options.comparison > 0) {
-        return "in " + result;
-      } else {
-        return result + " ago";
-      }
-    }
-    return result;
-  }
-  module2.exports = exports2.default;
-});
-
-// node_modules/date-fns/locale/_lib/buildFormatLongFn/index.js
-var require_buildFormatLongFn = __commonJS((exports2, module2) => {
-  "use strict";
-  Object.defineProperty(exports2, "__esModule", {
-    value: true
-  });
-  exports2.default = buildFormatLongFn;
-  function buildFormatLongFn(args) {
-    return function(dirtyOptions) {
-      var options = dirtyOptions || {};
-      var width = options.width ? String(options.width) : args.defaultWidth;
-      var format = args.formats[width] || args.formats[args.defaultWidth];
-      return format;
-    };
-  }
-  module2.exports = exports2.default;
-});
-
-// node_modules/date-fns/locale/en-US/_lib/formatLong/index.js
-var require_formatLong = __commonJS((exports2, module2) => {
-  "use strict";
-  Object.defineProperty(exports2, "__esModule", {
-    value: true
-  });
-  exports2.default = void 0;
-  var _index = _interopRequireDefault(require_buildFormatLongFn());
-  function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {default: obj};
-  }
-  var dateFormats = {
-    full: "EEEE, MMMM do, y",
-    long: "MMMM do, y",
-    medium: "MMM d, y",
-    short: "MM/dd/yyyy"
-  };
-  var timeFormats = {
-    full: "h:mm:ss a zzzz",
-    long: "h:mm:ss a z",
-    medium: "h:mm:ss a",
-    short: "h:mm a"
-  };
-  var dateTimeFormats = {
-    full: "{{date}} 'at' {{time}}",
-    long: "{{date}} 'at' {{time}}",
-    medium: "{{date}}, {{time}}",
-    short: "{{date}}, {{time}}"
-  };
-  var formatLong = {
-    date: (0, _index.default)({
-      formats: dateFormats,
-      defaultWidth: "full"
-    }),
-    time: (0, _index.default)({
-      formats: timeFormats,
-      defaultWidth: "full"
-    }),
-    dateTime: (0, _index.default)({
-      formats: dateTimeFormats,
-      defaultWidth: "full"
-    })
-  };
-  var _default = formatLong;
-  exports2.default = _default;
-  module2.exports = exports2.default;
-});
-
-// node_modules/date-fns/locale/en-US/_lib/formatRelative/index.js
-var require_formatRelative = __commonJS((exports2, module2) => {
-  "use strict";
-  Object.defineProperty(exports2, "__esModule", {
-    value: true
-  });
-  exports2.default = formatRelative;
-  var formatRelativeLocale = {
-    lastWeek: "'last' eeee 'at' p",
-    yesterday: "'yesterday at' p",
-    today: "'today at' p",
-    tomorrow: "'tomorrow at' p",
-    nextWeek: "eeee 'at' p",
-    other: "P"
-  };
-  function formatRelative(token, _date, _baseDate, _options) {
-    return formatRelativeLocale[token];
-  }
-  module2.exports = exports2.default;
-});
-
-// node_modules/date-fns/locale/_lib/buildLocalizeFn/index.js
-var require_buildLocalizeFn = __commonJS((exports2, module2) => {
-  "use strict";
-  Object.defineProperty(exports2, "__esModule", {
-    value: true
-  });
-  exports2.default = buildLocalizeFn;
-  function buildLocalizeFn(args) {
-    return function(dirtyIndex, dirtyOptions) {
-      var options = dirtyOptions || {};
-      var context = options.context ? String(options.context) : "standalone";
-      var valuesArray;
-      if (context === "formatting" && args.formattingValues) {
-        var defaultWidth = args.defaultFormattingWidth || args.defaultWidth;
-        var width = options.width ? String(options.width) : defaultWidth;
-        valuesArray = args.formattingValues[width] || args.formattingValues[defaultWidth];
-      } else {
-        var _defaultWidth = args.defaultWidth;
-        var _width = options.width ? String(options.width) : args.defaultWidth;
-        valuesArray = args.values[_width] || args.values[_defaultWidth];
-      }
-      var index = args.argumentCallback ? args.argumentCallback(dirtyIndex) : dirtyIndex;
-      return valuesArray[index];
-    };
-  }
-  module2.exports = exports2.default;
-});
-
-// node_modules/date-fns/locale/en-US/_lib/localize/index.js
-var require_localize = __commonJS((exports2, module2) => {
-  "use strict";
-  Object.defineProperty(exports2, "__esModule", {
-    value: true
-  });
-  exports2.default = void 0;
-  var _index = _interopRequireDefault(require_buildLocalizeFn());
-  function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {default: obj};
-  }
-  var eraValues = {
-    narrow: ["B", "A"],
-    abbreviated: ["BC", "AD"],
-    wide: ["Before Christ", "Anno Domini"]
-  };
-  var quarterValues = {
-    narrow: ["1", "2", "3", "4"],
-    abbreviated: ["Q1", "Q2", "Q3", "Q4"],
-    wide: ["1st quarter", "2nd quarter", "3rd quarter", "4th quarter"]
-  };
-  var monthValues = {
-    narrow: ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"],
-    abbreviated: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-    wide: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-  };
-  var dayValues = {
-    narrow: ["S", "M", "T", "W", "T", "F", "S"],
-    short: ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"],
-    abbreviated: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
-    wide: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-  };
-  var dayPeriodValues = {
-    narrow: {
-      am: "a",
-      pm: "p",
-      midnight: "mi",
-      noon: "n",
-      morning: "morning",
-      afternoon: "afternoon",
-      evening: "evening",
-      night: "night"
-    },
-    abbreviated: {
-      am: "AM",
-      pm: "PM",
-      midnight: "midnight",
-      noon: "noon",
-      morning: "morning",
-      afternoon: "afternoon",
-      evening: "evening",
-      night: "night"
-    },
-    wide: {
-      am: "a.m.",
-      pm: "p.m.",
-      midnight: "midnight",
-      noon: "noon",
-      morning: "morning",
-      afternoon: "afternoon",
-      evening: "evening",
-      night: "night"
-    }
-  };
-  var formattingDayPeriodValues = {
-    narrow: {
-      am: "a",
-      pm: "p",
-      midnight: "mi",
-      noon: "n",
-      morning: "in the morning",
-      afternoon: "in the afternoon",
-      evening: "in the evening",
-      night: "at night"
-    },
-    abbreviated: {
-      am: "AM",
-      pm: "PM",
-      midnight: "midnight",
-      noon: "noon",
-      morning: "in the morning",
-      afternoon: "in the afternoon",
-      evening: "in the evening",
-      night: "at night"
-    },
-    wide: {
-      am: "a.m.",
-      pm: "p.m.",
-      midnight: "midnight",
-      noon: "noon",
-      morning: "in the morning",
-      afternoon: "in the afternoon",
-      evening: "in the evening",
-      night: "at night"
-    }
-  };
-  function ordinalNumber(dirtyNumber, _dirtyOptions) {
-    var number = Number(dirtyNumber);
-    var rem100 = number % 100;
-    if (rem100 > 20 || rem100 < 10) {
-      switch (rem100 % 10) {
-        case 1:
-          return number + "st";
-        case 2:
-          return number + "nd";
-        case 3:
-          return number + "rd";
-      }
-    }
-    return number + "th";
-  }
-  var localize = {
-    ordinalNumber,
-    era: (0, _index.default)({
-      values: eraValues,
-      defaultWidth: "wide"
-    }),
-    quarter: (0, _index.default)({
-      values: quarterValues,
-      defaultWidth: "wide",
-      argumentCallback: function(quarter) {
-        return Number(quarter) - 1;
-      }
-    }),
-    month: (0, _index.default)({
-      values: monthValues,
-      defaultWidth: "wide"
-    }),
-    day: (0, _index.default)({
-      values: dayValues,
-      defaultWidth: "wide"
-    }),
-    dayPeriod: (0, _index.default)({
-      values: dayPeriodValues,
-      defaultWidth: "wide",
-      formattingValues: formattingDayPeriodValues,
-      defaultFormattingWidth: "wide"
-    })
-  };
-  var _default = localize;
-  exports2.default = _default;
-  module2.exports = exports2.default;
-});
-
-// node_modules/date-fns/locale/_lib/buildMatchPatternFn/index.js
-var require_buildMatchPatternFn = __commonJS((exports2, module2) => {
-  "use strict";
-  Object.defineProperty(exports2, "__esModule", {
-    value: true
-  });
-  exports2.default = buildMatchPatternFn;
-  function buildMatchPatternFn(args) {
-    return function(dirtyString, dirtyOptions) {
-      var string = String(dirtyString);
-      var options = dirtyOptions || {};
-      var matchResult = string.match(args.matchPattern);
-      if (!matchResult) {
-        return null;
-      }
-      var matchedString = matchResult[0];
-      var parseResult = string.match(args.parsePattern);
-      if (!parseResult) {
-        return null;
-      }
-      var value = args.valueCallback ? args.valueCallback(parseResult[0]) : parseResult[0];
-      value = options.valueCallback ? options.valueCallback(value) : value;
-      return {
-        value,
-        rest: string.slice(matchedString.length)
-      };
-    };
-  }
-  module2.exports = exports2.default;
-});
-
-// node_modules/date-fns/locale/_lib/buildMatchFn/index.js
-var require_buildMatchFn = __commonJS((exports2, module2) => {
-  "use strict";
-  Object.defineProperty(exports2, "__esModule", {
-    value: true
-  });
-  exports2.default = buildMatchFn;
-  function buildMatchFn(args) {
-    return function(dirtyString, dirtyOptions) {
-      var string = String(dirtyString);
-      var options = dirtyOptions || {};
-      var width = options.width;
-      var matchPattern = width && args.matchPatterns[width] || args.matchPatterns[args.defaultMatchWidth];
-      var matchResult = string.match(matchPattern);
-      if (!matchResult) {
-        return null;
-      }
-      var matchedString = matchResult[0];
-      var parsePatterns = width && args.parsePatterns[width] || args.parsePatterns[args.defaultParseWidth];
-      var value;
-      if (Object.prototype.toString.call(parsePatterns) === "[object Array]") {
-        value = findIndex(parsePatterns, function(pattern) {
-          return pattern.test(matchedString);
-        });
-      } else {
-        value = findKey(parsePatterns, function(pattern) {
-          return pattern.test(matchedString);
-        });
-      }
-      value = args.valueCallback ? args.valueCallback(value) : value;
-      value = options.valueCallback ? options.valueCallback(value) : value;
-      return {
-        value,
-        rest: string.slice(matchedString.length)
-      };
-    };
-  }
-  function findKey(object, predicate) {
-    for (var key in object) {
-      if (object.hasOwnProperty(key) && predicate(object[key])) {
-        return key;
-      }
-    }
-  }
-  function findIndex(array, predicate) {
-    for (var key = 0; key < array.length; key++) {
-      if (predicate(array[key])) {
-        return key;
-      }
-    }
-  }
-  module2.exports = exports2.default;
-});
-
-// node_modules/date-fns/locale/en-US/_lib/match/index.js
-var require_match = __commonJS((exports2, module2) => {
-  "use strict";
-  Object.defineProperty(exports2, "__esModule", {
-    value: true
-  });
-  exports2.default = void 0;
-  var _index = _interopRequireDefault(require_buildMatchPatternFn());
-  var _index2 = _interopRequireDefault(require_buildMatchFn());
-  function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {default: obj};
-  }
-  var matchOrdinalNumberPattern = /^(\d+)(th|st|nd|rd)?/i;
-  var parseOrdinalNumberPattern = /\d+/i;
-  var matchEraPatterns = {
-    narrow: /^(b|a)/i,
-    abbreviated: /^(b\.?\s?c\.?|b\.?\s?c\.?\s?e\.?|a\.?\s?d\.?|c\.?\s?e\.?)/i,
-    wide: /^(before christ|before common era|anno domini|common era)/i
-  };
-  var parseEraPatterns = {
-    any: [/^b/i, /^(a|c)/i]
-  };
-  var matchQuarterPatterns = {
-    narrow: /^[1234]/i,
-    abbreviated: /^q[1234]/i,
-    wide: /^[1234](th|st|nd|rd)? quarter/i
-  };
-  var parseQuarterPatterns = {
-    any: [/1/i, /2/i, /3/i, /4/i]
-  };
-  var matchMonthPatterns = {
-    narrow: /^[jfmasond]/i,
-    abbreviated: /^(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)/i,
-    wide: /^(january|february|march|april|may|june|july|august|september|october|november|december)/i
-  };
-  var parseMonthPatterns = {
-    narrow: [/^j/i, /^f/i, /^m/i, /^a/i, /^m/i, /^j/i, /^j/i, /^a/i, /^s/i, /^o/i, /^n/i, /^d/i],
-    any: [/^ja/i, /^f/i, /^mar/i, /^ap/i, /^may/i, /^jun/i, /^jul/i, /^au/i, /^s/i, /^o/i, /^n/i, /^d/i]
-  };
-  var matchDayPatterns = {
-    narrow: /^[smtwf]/i,
-    short: /^(su|mo|tu|we|th|fr|sa)/i,
-    abbreviated: /^(sun|mon|tue|wed|thu|fri|sat)/i,
-    wide: /^(sunday|monday|tuesday|wednesday|thursday|friday|saturday)/i
-  };
-  var parseDayPatterns = {
-    narrow: [/^s/i, /^m/i, /^t/i, /^w/i, /^t/i, /^f/i, /^s/i],
-    any: [/^su/i, /^m/i, /^tu/i, /^w/i, /^th/i, /^f/i, /^sa/i]
-  };
-  var matchDayPeriodPatterns = {
-    narrow: /^(a|p|mi|n|(in the|at) (morning|afternoon|evening|night))/i,
-    any: /^([ap]\.?\s?m\.?|midnight|noon|(in the|at) (morning|afternoon|evening|night))/i
-  };
-  var parseDayPeriodPatterns = {
-    any: {
-      am: /^a/i,
-      pm: /^p/i,
-      midnight: /^mi/i,
-      noon: /^no/i,
-      morning: /morning/i,
-      afternoon: /afternoon/i,
-      evening: /evening/i,
-      night: /night/i
-    }
-  };
-  var match = {
-    ordinalNumber: (0, _index.default)({
-      matchPattern: matchOrdinalNumberPattern,
-      parsePattern: parseOrdinalNumberPattern,
-      valueCallback: function(value) {
-        return parseInt(value, 10);
-      }
-    }),
-    era: (0, _index2.default)({
-      matchPatterns: matchEraPatterns,
-      defaultMatchWidth: "wide",
-      parsePatterns: parseEraPatterns,
-      defaultParseWidth: "any"
-    }),
-    quarter: (0, _index2.default)({
-      matchPatterns: matchQuarterPatterns,
-      defaultMatchWidth: "wide",
-      parsePatterns: parseQuarterPatterns,
-      defaultParseWidth: "any",
-      valueCallback: function(index) {
-        return index + 1;
-      }
-    }),
-    month: (0, _index2.default)({
-      matchPatterns: matchMonthPatterns,
-      defaultMatchWidth: "wide",
-      parsePatterns: parseMonthPatterns,
-      defaultParseWidth: "any"
-    }),
-    day: (0, _index2.default)({
-      matchPatterns: matchDayPatterns,
-      defaultMatchWidth: "wide",
-      parsePatterns: parseDayPatterns,
-      defaultParseWidth: "any"
-    }),
-    dayPeriod: (0, _index2.default)({
-      matchPatterns: matchDayPeriodPatterns,
-      defaultMatchWidth: "any",
-      parsePatterns: parseDayPeriodPatterns,
-      defaultParseWidth: "any"
-    })
-  };
-  var _default = match;
-  exports2.default = _default;
-  module2.exports = exports2.default;
-});
-
-// node_modules/date-fns/locale/en-US/index.js
-var require_en_US = __commonJS((exports2, module2) => {
-  "use strict";
-  Object.defineProperty(exports2, "__esModule", {
-    value: true
-  });
-  exports2.default = void 0;
-  var _index = _interopRequireDefault(require_formatDistance());
-  var _index2 = _interopRequireDefault(require_formatLong());
-  var _index3 = _interopRequireDefault(require_formatRelative());
-  var _index4 = _interopRequireDefault(require_localize());
-  var _index5 = _interopRequireDefault(require_match());
-  function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {default: obj};
-  }
-  var locale = {
-    code: "en-US",
-    formatDistance: _index.default,
-    formatLong: _index2.default,
-    formatRelative: _index3.default,
-    localize: _index4.default,
-    match: _index5.default,
-    options: {
-      weekStartsOn: 0,
-      firstWeekContainsDate: 1
-    }
-  };
-  var _default = locale;
-  exports2.default = _default;
-  module2.exports = exports2.default;
-});
-
-// node_modules/date-fns/_lib/assign/index.js
-var require_assign = __commonJS((exports2, module2) => {
-  "use strict";
-  Object.defineProperty(exports2, "__esModule", {
-    value: true
-  });
-  exports2.default = assign;
-  function assign(target, dirtyObject) {
-    if (target == null) {
-      throw new TypeError("assign requires that input parameter not be null or undefined");
-    }
-    dirtyObject = dirtyObject || {};
-    for (var property in dirtyObject) {
-      if (dirtyObject.hasOwnProperty(property)) {
-        target[property] = dirtyObject[property];
-      }
-    }
-    return target;
-  }
-  module2.exports = exports2.default;
-});
-
-// node_modules/date-fns/_lib/cloneObject/index.js
-var require_cloneObject = __commonJS((exports2, module2) => {
-  "use strict";
-  Object.defineProperty(exports2, "__esModule", {
-    value: true
-  });
-  exports2.default = cloneObject;
-  var _index = _interopRequireDefault(require_assign());
-  function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {default: obj};
-  }
-  function cloneObject(dirtyObject) {
-    return (0, _index.default)({}, dirtyObject);
-  }
-  module2.exports = exports2.default;
-});
-
-// node_modules/date-fns/_lib/getTimezoneOffsetInMilliseconds/index.js
-var require_getTimezoneOffsetInMilliseconds = __commonJS((exports2, module2) => {
-  "use strict";
-  Object.defineProperty(exports2, "__esModule", {
-    value: true
-  });
-  exports2.default = getTimezoneOffsetInMilliseconds;
-  var MILLISECONDS_IN_MINUTE = 6e4;
-  function getDateMillisecondsPart(date) {
-    return date.getTime() % MILLISECONDS_IN_MINUTE;
-  }
-  function getTimezoneOffsetInMilliseconds(dirtyDate) {
-    var date = new Date(dirtyDate.getTime());
-    var baseTimezoneOffset = Math.ceil(date.getTimezoneOffset());
-    date.setSeconds(0, 0);
-    var hasNegativeUTCOffset = baseTimezoneOffset > 0;
-    var millisecondsPartOfTimezoneOffset = hasNegativeUTCOffset ? (MILLISECONDS_IN_MINUTE + getDateMillisecondsPart(date)) % MILLISECONDS_IN_MINUTE : getDateMillisecondsPart(date);
-    return baseTimezoneOffset * MILLISECONDS_IN_MINUTE + millisecondsPartOfTimezoneOffset;
-  }
-  module2.exports = exports2.default;
-});
-
-// node_modules/date-fns/formatDistance/index.js
-var require_formatDistance2 = __commonJS((exports2, module2) => {
-  "use strict";
-  Object.defineProperty(exports2, "__esModule", {
-    value: true
-  });
-  exports2.default = formatDistance2;
-  var _index = _interopRequireDefault(require_compareAsc());
-  var _index2 = _interopRequireDefault(require_differenceInMonths());
-  var _index3 = _interopRequireDefault(require_differenceInSeconds());
-  var _index4 = _interopRequireDefault(require_en_US());
-  var _index5 = _interopRequireDefault(require_toDate());
-  var _index6 = _interopRequireDefault(require_cloneObject());
-  var _index7 = _interopRequireDefault(require_getTimezoneOffsetInMilliseconds());
-  var _index8 = _interopRequireDefault(require_requiredArgs());
-  function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {default: obj};
-  }
   var MINUTES_IN_DAY = 1440;
   var MINUTES_IN_ALMOST_TWO_DAYS = 2520;
   var MINUTES_IN_MONTH = 43200;
   var MINUTES_IN_TWO_MONTHS = 86400;
-  function formatDistance2(dirtyDate, dirtyBaseDate, dirtyOptions) {
-    (0, _index8.default)(2, arguments);
+  function formatDistance3(dirtyDate, dirtyBaseDate, dirtyOptions) {
+    requiredArgs(2, arguments);
     var options = dirtyOptions || {};
-    var locale = options.locale || _index4.default;
-    if (!locale.formatDistance) {
+    var locale2 = options.locale || en_US_default;
+    if (!locale2.formatDistance) {
       throw new RangeError("locale must contain formatDistance property");
     }
-    var comparison = (0, _index.default)(dirtyDate, dirtyBaseDate);
+    var comparison = compareAsc(dirtyDate, dirtyBaseDate);
     if (isNaN(comparison)) {
       throw new RangeError("Invalid time value");
     }
-    var localizeOptions = (0, _index6.default)(options);
+    var localizeOptions = cloneObject(options);
     localizeOptions.addSuffix = Boolean(options.addSuffix);
     localizeOptions.comparison = comparison;
     var dateLeft;
     var dateRight;
     if (comparison > 0) {
-      dateLeft = (0, _index5.default)(dirtyBaseDate);
-      dateRight = (0, _index5.default)(dirtyDate);
+      dateLeft = toDate(dirtyBaseDate);
+      dateRight = toDate(dirtyDate);
     } else {
-      dateLeft = (0, _index5.default)(dirtyDate);
-      dateRight = (0, _index5.default)(dirtyBaseDate);
+      dateLeft = toDate(dirtyDate);
+      dateRight = toDate(dirtyBaseDate);
     }
-    var seconds = (0, _index3.default)(dateRight, dateLeft);
-    var offsetInSeconds = ((0, _index7.default)(dateRight) - (0, _index7.default)(dateLeft)) / 1e3;
+    var seconds = differenceInSeconds(dateRight, dateLeft);
+    var offsetInSeconds = (getTimezoneOffsetInMilliseconds(dateRight) - getTimezoneOffsetInMilliseconds(dateLeft)) / 1e3;
     var minutes = Math.round((seconds - offsetInSeconds) / 60);
     var months;
     if (minutes < 2) {
       if (options.includeSeconds) {
         if (seconds < 5) {
-          return locale.formatDistance("lessThanXSeconds", 5, localizeOptions);
+          return locale2.formatDistance("lessThanXSeconds", 5, localizeOptions);
         } else if (seconds < 10) {
-          return locale.formatDistance("lessThanXSeconds", 10, localizeOptions);
+          return locale2.formatDistance("lessThanXSeconds", 10, localizeOptions);
         } else if (seconds < 20) {
-          return locale.formatDistance("lessThanXSeconds", 20, localizeOptions);
+          return locale2.formatDistance("lessThanXSeconds", 20, localizeOptions);
         } else if (seconds < 40) {
-          return locale.formatDistance("halfAMinute", null, localizeOptions);
+          return locale2.formatDistance("halfAMinute", null, localizeOptions);
         } else if (seconds < 60) {
-          return locale.formatDistance("lessThanXMinutes", 1, localizeOptions);
+          return locale2.formatDistance("lessThanXMinutes", 1, localizeOptions);
         } else {
-          return locale.formatDistance("xMinutes", 1, localizeOptions);
+          return locale2.formatDistance("xMinutes", 1, localizeOptions);
         }
       } else {
         if (minutes === 0) {
-          return locale.formatDistance("lessThanXMinutes", 1, localizeOptions);
+          return locale2.formatDistance("lessThanXMinutes", 1, localizeOptions);
         } else {
-          return locale.formatDistance("xMinutes", minutes, localizeOptions);
+          return locale2.formatDistance("xMinutes", minutes, localizeOptions);
         }
       }
     } else if (minutes < 45) {
-      return locale.formatDistance("xMinutes", minutes, localizeOptions);
+      return locale2.formatDistance("xMinutes", minutes, localizeOptions);
     } else if (minutes < 90) {
-      return locale.formatDistance("aboutXHours", 1, localizeOptions);
+      return locale2.formatDistance("aboutXHours", 1, localizeOptions);
     } else if (minutes < MINUTES_IN_DAY) {
       var hours = Math.round(minutes / 60);
-      return locale.formatDistance("aboutXHours", hours, localizeOptions);
+      return locale2.formatDistance("aboutXHours", hours, localizeOptions);
     } else if (minutes < MINUTES_IN_ALMOST_TWO_DAYS) {
-      return locale.formatDistance("xDays", 1, localizeOptions);
+      return locale2.formatDistance("xDays", 1, localizeOptions);
     } else if (minutes < MINUTES_IN_MONTH) {
       var days = Math.round(minutes / MINUTES_IN_DAY);
-      return locale.formatDistance("xDays", days, localizeOptions);
+      return locale2.formatDistance("xDays", days, localizeOptions);
     } else if (minutes < MINUTES_IN_TWO_MONTHS) {
       months = Math.round(minutes / MINUTES_IN_MONTH);
-      return locale.formatDistance("aboutXMonths", months, localizeOptions);
+      return locale2.formatDistance("aboutXMonths", months, localizeOptions);
     }
-    months = (0, _index2.default)(dateRight, dateLeft);
+    months = differenceInMonths(dateRight, dateLeft);
     if (months < 12) {
       var nearestMonth = Math.round(minutes / MINUTES_IN_MONTH);
-      return locale.formatDistance("xMonths", nearestMonth, localizeOptions);
+      return locale2.formatDistance("xMonths", nearestMonth, localizeOptions);
     } else {
       var monthsSinceStartOfYear = months % 12;
       var years = Math.floor(months / 12);
       if (monthsSinceStartOfYear < 3) {
-        return locale.formatDistance("aboutXYears", years, localizeOptions);
+        return locale2.formatDistance("aboutXYears", years, localizeOptions);
       } else if (monthsSinceStartOfYear < 9) {
-        return locale.formatDistance("overXYears", years, localizeOptions);
+        return locale2.formatDistance("overXYears", years, localizeOptions);
       } else {
-        return locale.formatDistance("almostXYears", years + 1, localizeOptions);
+        return locale2.formatDistance("almostXYears", years + 1, localizeOptions);
       }
     }
   }
-  module2.exports = exports2.default;
 });
 
 // lambda/ago.js
 var Jimp = require_dist32();
-var formatDistance = require_formatDistance2();
+
+// node_modules/date-fns/esm/_lib/requiredArgs/index.js
+function requiredArgs(required, args) {
+  if (args.length < required) {
+    throw new TypeError(required + " argument" + (required > 1 ? "s" : "") + " required, but only " + args.length + " present");
+  }
+}
+
+// node_modules/date-fns/esm/toDate/index.js
+function toDate(argument) {
+  requiredArgs(1, arguments);
+  var argStr = Object.prototype.toString.call(argument);
+  if (argument instanceof Date || typeof argument === "object" && argStr === "[object Date]") {
+    return new Date(argument.getTime());
+  } else if (typeof argument === "number" || argStr === "[object Number]") {
+    return new Date(argument);
+  } else {
+    if ((typeof argument === "string" || argStr === "[object String]") && typeof console !== "undefined") {
+      console.warn("Starting with v2.0.0-beta.1 date-fns doesn't accept strings as date arguments. Please use `parseISO` to parse strings. See: https://git.io/fjule");
+      console.warn(new Error().stack);
+    }
+    return new Date(NaN);
+  }
+}
+
+// node_modules/date-fns/esm/compareAsc/index.js
+function compareAsc(dirtyDateLeft, dirtyDateRight) {
+  requiredArgs(2, arguments);
+  var dateLeft = toDate(dirtyDateLeft);
+  var dateRight = toDate(dirtyDateRight);
+  var diff = dateLeft.getTime() - dateRight.getTime();
+  if (diff < 0) {
+    return -1;
+  } else if (diff > 0) {
+    return 1;
+  } else {
+    return diff;
+  }
+}
+
+// node_modules/date-fns/esm/differenceInCalendarMonths/index.js
+function differenceInCalendarMonths(dirtyDateLeft, dirtyDateRight) {
+  requiredArgs(2, arguments);
+  var dateLeft = toDate(dirtyDateLeft);
+  var dateRight = toDate(dirtyDateRight);
+  var yearDiff = dateLeft.getFullYear() - dateRight.getFullYear();
+  var monthDiff = dateLeft.getMonth() - dateRight.getMonth();
+  return yearDiff * 12 + monthDiff;
+}
+
+// node_modules/date-fns/esm/differenceInMonths/index.js
+function differenceInMonths(dirtyDateLeft, dirtyDateRight) {
+  requiredArgs(2, arguments);
+  var dateLeft = toDate(dirtyDateLeft);
+  var dateRight = toDate(dirtyDateRight);
+  var sign = compareAsc(dateLeft, dateRight);
+  var difference = Math.abs(differenceInCalendarMonths(dateLeft, dateRight));
+  dateLeft.setMonth(dateLeft.getMonth() - sign * difference);
+  var isLastMonthNotFull = compareAsc(dateLeft, dateRight) === -sign;
+  var result = sign * (difference - isLastMonthNotFull);
+  return result === 0 ? 0 : result;
+}
+
+// node_modules/date-fns/esm/differenceInMilliseconds/index.js
+function differenceInMilliseconds(dirtyDateLeft, dirtyDateRight) {
+  requiredArgs(2, arguments);
+  var dateLeft = toDate(dirtyDateLeft);
+  var dateRight = toDate(dirtyDateRight);
+  return dateLeft.getTime() - dateRight.getTime();
+}
+
+// node_modules/date-fns/esm/differenceInSeconds/index.js
+function differenceInSeconds(dirtyDateLeft, dirtyDateRight) {
+  requiredArgs(2, arguments);
+  var diff = differenceInMilliseconds(dirtyDateLeft, dirtyDateRight) / 1e3;
+  return diff > 0 ? Math.floor(diff) : Math.ceil(diff);
+}
+
+// node_modules/date-fns/esm/locale/en-US/_lib/formatDistance/index.js
+var formatDistanceLocale = {
+  lessThanXSeconds: {
+    one: "less than a second",
+    other: "less than {{count}} seconds"
+  },
+  xSeconds: {
+    one: "1 second",
+    other: "{{count}} seconds"
+  },
+  halfAMinute: "half a minute",
+  lessThanXMinutes: {
+    one: "less than a minute",
+    other: "less than {{count}} minutes"
+  },
+  xMinutes: {
+    one: "1 minute",
+    other: "{{count}} minutes"
+  },
+  aboutXHours: {
+    one: "about 1 hour",
+    other: "about {{count}} hours"
+  },
+  xHours: {
+    one: "1 hour",
+    other: "{{count}} hours"
+  },
+  xDays: {
+    one: "1 day",
+    other: "{{count}} days"
+  },
+  aboutXWeeks: {
+    one: "about 1 week",
+    other: "about {{count}} weeks"
+  },
+  xWeeks: {
+    one: "1 week",
+    other: "{{count}} weeks"
+  },
+  aboutXMonths: {
+    one: "about 1 month",
+    other: "about {{count}} months"
+  },
+  xMonths: {
+    one: "1 month",
+    other: "{{count}} months"
+  },
+  aboutXYears: {
+    one: "about 1 year",
+    other: "about {{count}} years"
+  },
+  xYears: {
+    one: "1 year",
+    other: "{{count}} years"
+  },
+  overXYears: {
+    one: "over 1 year",
+    other: "over {{count}} years"
+  },
+  almostXYears: {
+    one: "almost 1 year",
+    other: "almost {{count}} years"
+  }
+};
+function formatDistance(token, count, options) {
+  options = options || {};
+  var result;
+  if (typeof formatDistanceLocale[token] === "string") {
+    result = formatDistanceLocale[token];
+  } else if (count === 1) {
+    result = formatDistanceLocale[token].one;
+  } else {
+    result = formatDistanceLocale[token].other.replace("{{count}}", count);
+  }
+  if (options.addSuffix) {
+    if (options.comparison > 0) {
+      return "in " + result;
+    } else {
+      return result + " ago";
+    }
+  }
+  return result;
+}
+
+// node_modules/date-fns/esm/locale/_lib/buildFormatLongFn/index.js
+function buildFormatLongFn(args) {
+  return function(dirtyOptions) {
+    var options = dirtyOptions || {};
+    var width = options.width ? String(options.width) : args.defaultWidth;
+    var format = args.formats[width] || args.formats[args.defaultWidth];
+    return format;
+  };
+}
+
+// node_modules/date-fns/esm/locale/en-US/_lib/formatLong/index.js
+var dateFormats = {
+  full: "EEEE, MMMM do, y",
+  long: "MMMM do, y",
+  medium: "MMM d, y",
+  short: "MM/dd/yyyy"
+};
+var timeFormats = {
+  full: "h:mm:ss a zzzz",
+  long: "h:mm:ss a z",
+  medium: "h:mm:ss a",
+  short: "h:mm a"
+};
+var dateTimeFormats = {
+  full: "{{date}} 'at' {{time}}",
+  long: "{{date}} 'at' {{time}}",
+  medium: "{{date}}, {{time}}",
+  short: "{{date}}, {{time}}"
+};
+var formatLong = {
+  date: buildFormatLongFn({
+    formats: dateFormats,
+    defaultWidth: "full"
+  }),
+  time: buildFormatLongFn({
+    formats: timeFormats,
+    defaultWidth: "full"
+  }),
+  dateTime: buildFormatLongFn({
+    formats: dateTimeFormats,
+    defaultWidth: "full"
+  })
+};
+var formatLong_default = formatLong;
+
+// node_modules/date-fns/esm/locale/en-US/_lib/formatRelative/index.js
+var formatRelativeLocale = {
+  lastWeek: "'last' eeee 'at' p",
+  yesterday: "'yesterday at' p",
+  today: "'today at' p",
+  tomorrow: "'tomorrow at' p",
+  nextWeek: "eeee 'at' p",
+  other: "P"
+};
+function formatRelative(token, _date, _baseDate, _options) {
+  return formatRelativeLocale[token];
+}
+
+// node_modules/date-fns/esm/locale/_lib/buildLocalizeFn/index.js
+function buildLocalizeFn(args) {
+  return function(dirtyIndex, dirtyOptions) {
+    var options = dirtyOptions || {};
+    var context = options.context ? String(options.context) : "standalone";
+    var valuesArray;
+    if (context === "formatting" && args.formattingValues) {
+      var defaultWidth = args.defaultFormattingWidth || args.defaultWidth;
+      var width = options.width ? String(options.width) : defaultWidth;
+      valuesArray = args.formattingValues[width] || args.formattingValues[defaultWidth];
+    } else {
+      var _defaultWidth = args.defaultWidth;
+      var _width = options.width ? String(options.width) : args.defaultWidth;
+      valuesArray = args.values[_width] || args.values[_defaultWidth];
+    }
+    var index = args.argumentCallback ? args.argumentCallback(dirtyIndex) : dirtyIndex;
+    return valuesArray[index];
+  };
+}
+
+// node_modules/date-fns/esm/locale/en-US/_lib/localize/index.js
+var eraValues = {
+  narrow: ["B", "A"],
+  abbreviated: ["BC", "AD"],
+  wide: ["Before Christ", "Anno Domini"]
+};
+var quarterValues = {
+  narrow: ["1", "2", "3", "4"],
+  abbreviated: ["Q1", "Q2", "Q3", "Q4"],
+  wide: ["1st quarter", "2nd quarter", "3rd quarter", "4th quarter"]
+};
+var monthValues = {
+  narrow: ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"],
+  abbreviated: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+  wide: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+};
+var dayValues = {
+  narrow: ["S", "M", "T", "W", "T", "F", "S"],
+  short: ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"],
+  abbreviated: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+  wide: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+};
+var dayPeriodValues = {
+  narrow: {
+    am: "a",
+    pm: "p",
+    midnight: "mi",
+    noon: "n",
+    morning: "morning",
+    afternoon: "afternoon",
+    evening: "evening",
+    night: "night"
+  },
+  abbreviated: {
+    am: "AM",
+    pm: "PM",
+    midnight: "midnight",
+    noon: "noon",
+    morning: "morning",
+    afternoon: "afternoon",
+    evening: "evening",
+    night: "night"
+  },
+  wide: {
+    am: "a.m.",
+    pm: "p.m.",
+    midnight: "midnight",
+    noon: "noon",
+    morning: "morning",
+    afternoon: "afternoon",
+    evening: "evening",
+    night: "night"
+  }
+};
+var formattingDayPeriodValues = {
+  narrow: {
+    am: "a",
+    pm: "p",
+    midnight: "mi",
+    noon: "n",
+    morning: "in the morning",
+    afternoon: "in the afternoon",
+    evening: "in the evening",
+    night: "at night"
+  },
+  abbreviated: {
+    am: "AM",
+    pm: "PM",
+    midnight: "midnight",
+    noon: "noon",
+    morning: "in the morning",
+    afternoon: "in the afternoon",
+    evening: "in the evening",
+    night: "at night"
+  },
+  wide: {
+    am: "a.m.",
+    pm: "p.m.",
+    midnight: "midnight",
+    noon: "noon",
+    morning: "in the morning",
+    afternoon: "in the afternoon",
+    evening: "in the evening",
+    night: "at night"
+  }
+};
+function ordinalNumber(dirtyNumber, _dirtyOptions) {
+  var number = Number(dirtyNumber);
+  var rem100 = number % 100;
+  if (rem100 > 20 || rem100 < 10) {
+    switch (rem100 % 10) {
+      case 1:
+        return number + "st";
+      case 2:
+        return number + "nd";
+      case 3:
+        return number + "rd";
+    }
+  }
+  return number + "th";
+}
+var localize = {
+  ordinalNumber,
+  era: buildLocalizeFn({
+    values: eraValues,
+    defaultWidth: "wide"
+  }),
+  quarter: buildLocalizeFn({
+    values: quarterValues,
+    defaultWidth: "wide",
+    argumentCallback: function(quarter) {
+      return Number(quarter) - 1;
+    }
+  }),
+  month: buildLocalizeFn({
+    values: monthValues,
+    defaultWidth: "wide"
+  }),
+  day: buildLocalizeFn({
+    values: dayValues,
+    defaultWidth: "wide"
+  }),
+  dayPeriod: buildLocalizeFn({
+    values: dayPeriodValues,
+    defaultWidth: "wide",
+    formattingValues: formattingDayPeriodValues,
+    defaultFormattingWidth: "wide"
+  })
+};
+var localize_default = localize;
+
+// node_modules/date-fns/esm/locale/_lib/buildMatchPatternFn/index.js
+function buildMatchPatternFn(args) {
+  return function(dirtyString, dirtyOptions) {
+    var string = String(dirtyString);
+    var options = dirtyOptions || {};
+    var matchResult = string.match(args.matchPattern);
+    if (!matchResult) {
+      return null;
+    }
+    var matchedString = matchResult[0];
+    var parseResult = string.match(args.parsePattern);
+    if (!parseResult) {
+      return null;
+    }
+    var value = args.valueCallback ? args.valueCallback(parseResult[0]) : parseResult[0];
+    value = options.valueCallback ? options.valueCallback(value) : value;
+    return {
+      value,
+      rest: string.slice(matchedString.length)
+    };
+  };
+}
+
+// node_modules/date-fns/esm/locale/_lib/buildMatchFn/index.js
+function buildMatchFn(args) {
+  return function(dirtyString, dirtyOptions) {
+    var string = String(dirtyString);
+    var options = dirtyOptions || {};
+    var width = options.width;
+    var matchPattern = width && args.matchPatterns[width] || args.matchPatterns[args.defaultMatchWidth];
+    var matchResult = string.match(matchPattern);
+    if (!matchResult) {
+      return null;
+    }
+    var matchedString = matchResult[0];
+    var parsePatterns = width && args.parsePatterns[width] || args.parsePatterns[args.defaultParseWidth];
+    var value;
+    if (Object.prototype.toString.call(parsePatterns) === "[object Array]") {
+      value = findIndex(parsePatterns, function(pattern) {
+        return pattern.test(matchedString);
+      });
+    } else {
+      value = findKey(parsePatterns, function(pattern) {
+        return pattern.test(matchedString);
+      });
+    }
+    value = args.valueCallback ? args.valueCallback(value) : value;
+    value = options.valueCallback ? options.valueCallback(value) : value;
+    return {
+      value,
+      rest: string.slice(matchedString.length)
+    };
+  };
+}
+function findKey(object, predicate) {
+  for (var key in object) {
+    if (object.hasOwnProperty(key) && predicate(object[key])) {
+      return key;
+    }
+  }
+}
+function findIndex(array, predicate) {
+  for (var key = 0; key < array.length; key++) {
+    if (predicate(array[key])) {
+      return key;
+    }
+  }
+}
+
+// node_modules/date-fns/esm/locale/en-US/_lib/match/index.js
+var matchOrdinalNumberPattern = /^(\d+)(th|st|nd|rd)?/i;
+var parseOrdinalNumberPattern = /\d+/i;
+var matchEraPatterns = {
+  narrow: /^(b|a)/i,
+  abbreviated: /^(b\.?\s?c\.?|b\.?\s?c\.?\s?e\.?|a\.?\s?d\.?|c\.?\s?e\.?)/i,
+  wide: /^(before christ|before common era|anno domini|common era)/i
+};
+var parseEraPatterns = {
+  any: [/^b/i, /^(a|c)/i]
+};
+var matchQuarterPatterns = {
+  narrow: /^[1234]/i,
+  abbreviated: /^q[1234]/i,
+  wide: /^[1234](th|st|nd|rd)? quarter/i
+};
+var parseQuarterPatterns = {
+  any: [/1/i, /2/i, /3/i, /4/i]
+};
+var matchMonthPatterns = {
+  narrow: /^[jfmasond]/i,
+  abbreviated: /^(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)/i,
+  wide: /^(january|february|march|april|may|june|july|august|september|october|november|december)/i
+};
+var parseMonthPatterns = {
+  narrow: [/^j/i, /^f/i, /^m/i, /^a/i, /^m/i, /^j/i, /^j/i, /^a/i, /^s/i, /^o/i, /^n/i, /^d/i],
+  any: [/^ja/i, /^f/i, /^mar/i, /^ap/i, /^may/i, /^jun/i, /^jul/i, /^au/i, /^s/i, /^o/i, /^n/i, /^d/i]
+};
+var matchDayPatterns = {
+  narrow: /^[smtwf]/i,
+  short: /^(su|mo|tu|we|th|fr|sa)/i,
+  abbreviated: /^(sun|mon|tue|wed|thu|fri|sat)/i,
+  wide: /^(sunday|monday|tuesday|wednesday|thursday|friday|saturday)/i
+};
+var parseDayPatterns = {
+  narrow: [/^s/i, /^m/i, /^t/i, /^w/i, /^t/i, /^f/i, /^s/i],
+  any: [/^su/i, /^m/i, /^tu/i, /^w/i, /^th/i, /^f/i, /^sa/i]
+};
+var matchDayPeriodPatterns = {
+  narrow: /^(a|p|mi|n|(in the|at) (morning|afternoon|evening|night))/i,
+  any: /^([ap]\.?\s?m\.?|midnight|noon|(in the|at) (morning|afternoon|evening|night))/i
+};
+var parseDayPeriodPatterns = {
+  any: {
+    am: /^a/i,
+    pm: /^p/i,
+    midnight: /^mi/i,
+    noon: /^no/i,
+    morning: /morning/i,
+    afternoon: /afternoon/i,
+    evening: /evening/i,
+    night: /night/i
+  }
+};
+var match = {
+  ordinalNumber: buildMatchPatternFn({
+    matchPattern: matchOrdinalNumberPattern,
+    parsePattern: parseOrdinalNumberPattern,
+    valueCallback: function(value) {
+      return parseInt(value, 10);
+    }
+  }),
+  era: buildMatchFn({
+    matchPatterns: matchEraPatterns,
+    defaultMatchWidth: "wide",
+    parsePatterns: parseEraPatterns,
+    defaultParseWidth: "any"
+  }),
+  quarter: buildMatchFn({
+    matchPatterns: matchQuarterPatterns,
+    defaultMatchWidth: "wide",
+    parsePatterns: parseQuarterPatterns,
+    defaultParseWidth: "any",
+    valueCallback: function(index) {
+      return index + 1;
+    }
+  }),
+  month: buildMatchFn({
+    matchPatterns: matchMonthPatterns,
+    defaultMatchWidth: "wide",
+    parsePatterns: parseMonthPatterns,
+    defaultParseWidth: "any"
+  }),
+  day: buildMatchFn({
+    matchPatterns: matchDayPatterns,
+    defaultMatchWidth: "wide",
+    parsePatterns: parseDayPatterns,
+    defaultParseWidth: "any"
+  }),
+  dayPeriod: buildMatchFn({
+    matchPatterns: matchDayPeriodPatterns,
+    defaultMatchWidth: "any",
+    parsePatterns: parseDayPeriodPatterns,
+    defaultParseWidth: "any"
+  })
+};
+var match_default = match;
+
+// node_modules/date-fns/esm/locale/en-US/index.js
+var locale = {
+  code: "en-US",
+  formatDistance,
+  formatLong: formatLong_default,
+  formatRelative,
+  localize: localize_default,
+  match: match_default,
+  options: {
+    weekStartsOn: 0,
+    firstWeekContainsDate: 1
+  }
+};
+var en_US_default = locale;
+
+// node_modules/date-fns/esm/_lib/assign/index.js
+function assign(target, dirtyObject) {
+  if (target == null) {
+    throw new TypeError("assign requires that input parameter not be null or undefined");
+  }
+  dirtyObject = dirtyObject || {};
+  for (var property in dirtyObject) {
+    if (dirtyObject.hasOwnProperty(property)) {
+      target[property] = dirtyObject[property];
+    }
+  }
+  return target;
+}
+
+// node_modules/date-fns/esm/_lib/cloneObject/index.js
+function cloneObject(dirtyObject) {
+  return assign({}, dirtyObject);
+}
+
+// node_modules/date-fns/esm/_lib/getTimezoneOffsetInMilliseconds/index.js
+var MILLISECONDS_IN_MINUTE = 6e4;
+function getDateMillisecondsPart(date) {
+  return date.getTime() % MILLISECONDS_IN_MINUTE;
+}
+function getTimezoneOffsetInMilliseconds(dirtyDate) {
+  var date = new Date(dirtyDate.getTime());
+  var baseTimezoneOffset = Math.ceil(date.getTimezoneOffset());
+  date.setSeconds(0, 0);
+  var hasNegativeUTCOffset = baseTimezoneOffset > 0;
+  var millisecondsPartOfTimezoneOffset = hasNegativeUTCOffset ? (MILLISECONDS_IN_MINUTE + getDateMillisecondsPart(date)) % MILLISECONDS_IN_MINUTE : getDateMillisecondsPart(date);
+  return baseTimezoneOffset * MILLISECONDS_IN_MINUTE + millisecondsPartOfTimezoneOffset;
+}
+
+// lambda/ago.js
+var formatDistance2 = require_formatDistance();
 var capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
 exports.handler = async (event) => {
   if (event.queryStringParameters.time === void 0) {
@@ -30585,8 +30287,8 @@ exports.handler = async (event) => {
     };
   }
   const mime = "image/png";
-  const font = await Jimp.loadFont(Jimp.FONT_SANS_14_BLACK);
-  const text = capitalize(formatDistance(new Date(), new Date(+event.queryStringParameters.time).getTime())) + " ago";
+  const font = await Jimp.loadFont("../assets/open-sans-14-black.fnt");
+  const text = capitalize(formatDistance2(new Date(), new Date(+event.queryStringParameters.time).getTime())) + " ago";
   const width = Jimp.measureText(font, text);
   const height = Jimp.measureTextHeight(font, text);
   const image = await Jimp.read(width, height + 3);
