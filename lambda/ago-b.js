@@ -30293,7 +30293,7 @@ exports.handler = async (event) => {
     };
   }
   const mime = "image/png";
-  const font = await Jimp.loadFont(fontFile);
+  const font = await Jimp.loadFont(require.resolve(fontFile));
   const text = capitalize(formatDistance2(new Date(), new Date(+event.queryStringParameters.time).getTime())) + " ago";
   const width = Jimp.measureText(font, text);
   const height = Jimp.measureTextHeight(font, text);
