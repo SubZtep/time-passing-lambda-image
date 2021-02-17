@@ -29688,6 +29688,11 @@ var require_formatDistance = __commonJS((exports2) => {
   }
 });
 
+// node_modules/jimp/fonts/open-sans/open-sans-14-black/open-sans-14-black.fnt
+var require_open_sans_14_black = __commonJS((exports2, module2) => {
+  module2.exports = "open-sans-14-black.PBZWHPUO.fnt";
+});
+
 // lambda/ago.js
 var Jimp = require_dist32();
 
@@ -30278,6 +30283,7 @@ function getTimezoneOffsetInMilliseconds(dirtyDate) {
 
 // lambda/ago.js
 var formatDistance2 = require_formatDistance();
+var fontFile = require_open_sans_14_black();
 var capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
 exports.handler = async (event) => {
   if (event.queryStringParameters.time === void 0) {
@@ -30287,7 +30293,7 @@ exports.handler = async (event) => {
     };
   }
   const mime = "image/png";
-  const font = await Jimp.loadFont("../assets/open-sans-14-black.fnt");
+  const font = await Jimp.loadFont(fontFile);
   const text = capitalize(formatDistance2(new Date(), new Date(+event.queryStringParameters.time).getTime())) + " ago";
   const width = Jimp.measureText(font, text);
   const height = Jimp.measureTextHeight(font, text);
