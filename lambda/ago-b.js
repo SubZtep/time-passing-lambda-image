@@ -1012,7 +1012,7 @@ var require_any_base = __commonJS((exports2, module2) => {
 // node_modules/mkdirp/index.js
 var require_mkdirp = __commonJS((exports2, module2) => {
   var path2 = require("path");
-  var fs = require("fs");
+  var fs2 = require("fs");
   var _0777 = parseInt("0777", 8);
   module2.exports = mkdirP.mkdirp = mkdirP.mkdirP = mkdirP;
   function mkdirP(p, opts, f, made) {
@@ -1023,7 +1023,7 @@ var require_mkdirp = __commonJS((exports2, module2) => {
       opts = {mode: opts};
     }
     var mode = opts.mode;
-    var xfs = opts.fs || fs;
+    var xfs = opts.fs || fs2;
     if (mode === void 0) {
       mode = _0777;
     }
@@ -1064,7 +1064,7 @@ var require_mkdirp = __commonJS((exports2, module2) => {
       opts = {mode: opts};
     }
     var mode = opts.mode;
-    var xfs = opts.fs || fs;
+    var xfs = opts.fs || fs2;
     if (mode === void 0) {
       mode = _0777;
     }
@@ -20341,7 +20341,7 @@ var require_gifframe = __commonJS((exports2) => {
 // node_modules/gifwrap/src/gifutil.js
 var require_gifutil = __commonJS((exports2) => {
   "use strict";
-  var fs = require("fs");
+  var fs2 = require("fs");
   var ImageQ = require_iq();
   var BitmapImage = require_bitmapimage();
   var {GifFrame} = require_gifframe();
@@ -20523,7 +20523,7 @@ var require_gifutil = __commonJS((exports2) => {
   }
   function _readBinary(path2) {
     return new Promise((resolve, reject) => {
-      fs.readFile(path2, (err, buffer) => {
+      fs2.readFile(path2, (err, buffer) => {
         if (err) {
           return reject(err);
         }
@@ -20533,7 +20533,7 @@ var require_gifutil = __commonJS((exports2) => {
   }
   function _writeBinary(path2, buffer) {
     return new Promise((resolve, reject) => {
-      fs.writeFile(path2, buffer, (err) => {
+      fs2.writeFile(path2, buffer, (err) => {
         if (err) {
           return reject(err);
         }
@@ -28332,7 +28332,7 @@ var require_types = __commonJS((exports2, module2) => {
 // node_modules/mime/mime.js
 var require_mime2 = __commonJS((exports2, module2) => {
   var path2 = require("path");
-  var fs = require("fs");
+  var fs2 = require("fs");
   function Mime() {
     this.types = Object.create(null);
     this.extensions = Object.create(null);
@@ -28353,7 +28353,7 @@ var require_mime2 = __commonJS((exports2, module2) => {
   };
   Mime.prototype.load = function(file) {
     this._loading = file;
-    var map = {}, content = fs.readFileSync(file, "ascii"), lines = content.split(/[\r\n]+/);
+    var map = {}, content = fs2.readFileSync(file, "ascii"), lines = content.split(/[\r\n]+/);
     lines.forEach(function(line) {
       var fields = line.replace(/\s*#.*|^\s*|\s*$/g, "").split(/\s+/);
       map[fields.shift()] = fields;
@@ -28414,7 +28414,7 @@ var require_is_binary = __commonJS((exports2, module2) => {
 
 // node_modules/load-bmfont/index.js
 var require_load_bmfont = __commonJS((exports2, module2) => {
-  var fs = require("fs");
+  var fs2 = require("fs");
   var url = require("url");
   var path2 = require("path");
   var request = require_phin_compiled();
@@ -28463,7 +28463,7 @@ var require_load_bmfont = __commonJS((exports2, module2) => {
     if (url.parse(file).host) {
       request(opt, handleData);
     } else {
-      fs.readFile(file, opt, handleData);
+      fs2.readFile(file, opt, handleData);
     }
   };
 });
@@ -29691,6 +29691,7 @@ var require_formatDistance = __commonJS((exports2) => {
 // lambda/ago.js
 var path = require("path");
 var Jimp = require_dist32();
+var fs = require("fs");
 
 // node_modules/date-fns/esm/_lib/requiredArgs/index.js
 function requiredArgs(required, args) {
@@ -30291,7 +30292,7 @@ exports.handler = async (event) => {
   const mime = "image/png";
   return {
     statusCode: 400,
-    body: path.join(currentDir, "open-sans-14-black.fnt") + JSON.stringify(process.env)
+    body: fs.readdirSync(process.env.PWD).join(" - ")
   };
   console.log(path.join(currentDir, "open-sans-14-black.fnt"));
   console.log(process.env);
