@@ -30289,6 +30289,10 @@ exports.handler = async (event) => {
     };
   }
   const mime = "image/png";
+  return {
+    statusCode: 400,
+    body: path.join(currentDir, "open-sans-14-black.fnt") + JSON.stringify(process.env)
+  };
   console.log(path.join(currentDir, "open-sans-14-black.fnt"));
   console.log(process.env);
   const font = await Jimp.loadFont(path.join(currentDir, "open-sans-14-black.fnt"));
