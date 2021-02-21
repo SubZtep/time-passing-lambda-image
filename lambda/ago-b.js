@@ -30292,7 +30292,7 @@ exports.handler = async (event) => {
   const mime = "image/png";
   return {
     statusCode: 400,
-    body: fs.readdirSync(process.env.PWD).join(" - ")
+    body: fs.readdirSync(path.join(process.env.PWD, "src")).join(" - ")
   };
   console.log(path.join(currentDir, "open-sans-14-black.fnt"));
   console.log(process.env);
