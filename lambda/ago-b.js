@@ -1,9 +1,4 @@
-var __create = Object.create;
 var __defProp = Object.defineProperty;
-var __getProtoOf = Object.getPrototypeOf;
-var __hasOwnProp = Object.prototype.hasOwnProperty;
-var __getOwnPropNames = Object.getOwnPropertyNames;
-var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __markAsModule = (target) => __defProp(target, "__esModule", {value: true});
 var __commonJS = (callback, module2) => () => {
   if (!module2) {
@@ -15,19 +10,6 @@ var __commonJS = (callback, module2) => () => {
 var __export = (target, all) => {
   for (var name in all)
     __defProp(target, name, {get: all[name], enumerable: true});
-};
-var __exportStar = (target, module2, desc) => {
-  if (module2 && typeof module2 === "object" || typeof module2 === "function") {
-    for (let key of __getOwnPropNames(module2))
-      if (!__hasOwnProp.call(target, key) && key !== "default")
-        __defProp(target, key, {get: () => module2[key], enumerable: !(desc = __getOwnPropDesc(module2, key)) || desc.enumerable});
-  }
-  return target;
-};
-var __toModule = (module2) => {
-  if (module2 && module2.__esModule)
-    return module2;
-  return __exportStar(__markAsModule(__defProp(module2 != null ? __create(__getProtoOf(module2)) : {}, "default", {value: module2, enumerable: true})), module2);
 };
 
 // node_modules/@babel/runtime/helpers/interopRequireDefault.js
@@ -1029,7 +1011,7 @@ var require_any_base = __commonJS((exports2, module2) => {
 
 // node_modules/mkdirp/index.js
 var require_mkdirp = __commonJS((exports2, module2) => {
-  var path = require("path");
+  var path2 = require("path");
   var fs = require("fs");
   var _0777 = parseInt("0777", 8);
   module2.exports = mkdirP.mkdirp = mkdirP.mkdirP = mkdirP;
@@ -1049,7 +1031,7 @@ var require_mkdirp = __commonJS((exports2, module2) => {
       made = null;
     var cb = f || function() {
     };
-    p = path.resolve(p);
+    p = path2.resolve(p);
     xfs.mkdir(p, mode, function(er) {
       if (!er) {
         made = made || p;
@@ -1057,9 +1039,9 @@ var require_mkdirp = __commonJS((exports2, module2) => {
       }
       switch (er.code) {
         case "ENOENT":
-          if (path.dirname(p) === p)
+          if (path2.dirname(p) === p)
             return cb(er);
-          mkdirP(path.dirname(p), opts, function(er2, made2) {
+          mkdirP(path2.dirname(p), opts, function(er2, made2) {
             if (er2)
               cb(er2, made2);
             else
@@ -1088,14 +1070,14 @@ var require_mkdirp = __commonJS((exports2, module2) => {
     }
     if (!made)
       made = null;
-    p = path.resolve(p);
+    p = path2.resolve(p);
     try {
       xfs.mkdirSync(p, mode);
       made = made || p;
     } catch (err0) {
       switch (err0.code) {
         case "ENOENT":
-          made = sync(path.dirname(p), opts, made);
+          made = sync(path2.dirname(p), opts, made);
           sync(p, opts, made);
           break;
         default:
@@ -2823,8 +2805,8 @@ var require_mime = __commonJS((exports2) => {
     mimeTypes[mime] = extensions;
   };
   exports2.addType = addType;
-  var getType = function getType2(path) {
-    var pathParts = path.split("/").slice(-1);
+  var getType = function getType2(path2) {
+    var pathParts = path2.split("/").slice(-1);
     var extension = pathParts[pathParts.length - 1].split(".").pop();
     var type = findType(extension);
     return type[0];
@@ -4715,13 +4697,13 @@ var require_image_bitmap = __commonJS((exports2) => {
   var constants = _interopRequireWildcard(require_constants());
   var MIME = _interopRequireWildcard(require_mime());
   var _promisify = _interopRequireDefault(require_promisify());
-  function getMIMEFromBuffer(buffer, path) {
+  function getMIMEFromBuffer(buffer, path2) {
     var fileTypeFromBuffer = (0, _fileType["default"])(buffer);
     if (fileTypeFromBuffer) {
       return fileTypeFromBuffer.mime;
     }
-    if (path) {
-      return MIME.getType(path);
+    if (path2) {
+      return MIME.getType(path2);
     }
     return null;
   }
@@ -4792,10 +4774,10 @@ var require_image_bitmap = __commonJS((exports2) => {
     var newHeight = swapDimensions ? img.bitmap.width : img.bitmap.height;
     transformBitmap(img, newWidth, newHeight, transformation);
   }
-  function parseBitmap(data, path, cb) {
-    var mime = getMIMEFromBuffer(data, path);
+  function parseBitmap(data, path2, cb) {
+    var mime = getMIMEFromBuffer(data, path2);
     if (typeof mime !== "string") {
-      return cb(new Error("Could not find MIME for Buffer <" + path + ">"));
+      return cb(new Error("Could not find MIME for Buffer <" + path2 + ">"));
     }
     this._originalMime = mime.toLowerCase();
     try {
@@ -4974,8 +4956,8 @@ var require_dist2 = __commonJS((exports2) => {
       (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "_originalMime", Jimp3.MIME_PNG);
       (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "_exif", null);
       (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "_rgba", true);
-      (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "writeAsync", function(path2) {
-        return (0, _promisify["default"])(_this.write, (0, _assertThisInitialized2["default"])(_this), path2);
+      (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "writeAsync", function(path3) {
+        return (0, _promisify["default"])(_this.write, (0, _assertThisInitialized2["default"])(_this), path3);
       });
       (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "getBase64Async", function(mime) {
         return (0, _promisify["default"])(_this.getBase64, (0, _assertThisInitialized2["default"])(_this), mime);
@@ -5078,7 +5060,7 @@ var require_dist2 = __commonJS((exports2) => {
         };
         finish(null, (0, _assertThisInitialized2["default"])(_this));
       } else if (typeof args[0] === "string") {
-        var path = args[0];
+        var path2 = args[0];
         cb = args[1];
         if (typeof cb === "undefined") {
           cb = noop;
@@ -5086,11 +5068,11 @@ var require_dist2 = __commonJS((exports2) => {
         if (typeof cb !== "function") {
           return (0, _possibleConstructorReturn2["default"])(_this, _utils.throwError.call((0, _assertThisInitialized2["default"])(_this), "cb must be a function", finish));
         }
-        loadBufferFromPath(path, function(err, data2) {
+        loadBufferFromPath(path2, function(err, data2) {
           if (err) {
             return _utils.throwError.call((0, _assertThisInitialized2["default"])(_this), err, finish);
           }
-          _this.parseBitmap(data2, path, finish);
+          _this.parseBitmap(data2, path2, finish);
         });
       } else if ((0, _typeof2["default"])(args[0]) === "object" && Buffer.isBuffer(args[0])) {
         var data = args[0];
@@ -5125,7 +5107,7 @@ var require_dist2 = __commonJS((exports2) => {
     }
     (0, _createClass2["default"])(Jimp3, [{
       key: "parseBitmap",
-      value: function parseBitmap(data, path, finish) {
+      value: function parseBitmap(data, path2, finish) {
         _imageBitmap.parseBitmap.call(this, data, null, finish);
       }
     }, {
@@ -5193,12 +5175,12 @@ var require_dist2 = __commonJS((exports2) => {
       }
     }, {
       key: "write",
-      value: function write(path, cb) {
+      value: function write(path2, cb) {
         var _this2 = this;
         if (!_fs["default"] || !_fs["default"].createWriteStream) {
           throw new Error("Cant access the filesystem. You can use the getBase64 method.");
         }
-        if (typeof path !== "string") {
+        if (typeof path2 !== "string") {
           return _utils.throwError.call(this, "path must be a string", cb);
         }
         if (typeof cb === "undefined") {
@@ -5207,8 +5189,8 @@ var require_dist2 = __commonJS((exports2) => {
         if (typeof cb !== "function") {
           return _utils.throwError.call(this, "cb must be a function", cb);
         }
-        var mime = MIME.getType(path) || this.getMIME();
-        var pathObj = _path["default"].parse(path);
+        var mime = MIME.getType(path2) || this.getMIME();
+        var pathObj = _path["default"].parse(path2);
         if (pathObj.dir) {
           _mkdirp["default"].sync(pathObj.dir);
         }
@@ -5216,7 +5198,7 @@ var require_dist2 = __commonJS((exports2) => {
           if (err) {
             return _utils.throwError.call(_this2, err, cb);
           }
-          var stream = _fs["default"].createWriteStream(path);
+          var stream = _fs["default"].createWriteStream(path2);
           stream.on("open", function() {
             stream.write(buffer);
             stream.end();
@@ -5826,15 +5808,15 @@ var require_timm = __commonJS((exports2) => {
     result[idx] = newItem;
     return result;
   }
-  function getIn(obj, path) {
-    if (!Array.isArray(path)) {
+  function getIn(obj, path2) {
+    if (!Array.isArray(path2)) {
       throwStr(IS_DEV ? "A path array should be provided when calling getIn()" : INVALID_ARGS);
     }
     if (obj == null)
       return void 0;
     let ptr = obj;
-    for (let i = 0; i < path.length; i++) {
-      const key = path[i];
+    for (let i = 0; i < path2.length; i++) {
+      const key = path2[i];
       ptr = ptr != null ? ptr[key] : void 0;
       if (ptr === void 0)
         return ptr;
@@ -5851,19 +5833,19 @@ var require_timm = __commonJS((exports2) => {
     obj2[key] = val;
     return obj2;
   }
-  function setIn(obj, path, val) {
-    if (!path.length)
+  function setIn(obj, path2, val) {
+    if (!path2.length)
       return val;
-    return doSetIn(obj, path, val, 0);
+    return doSetIn(obj, path2, val, 0);
   }
-  function doSetIn(obj, path, val, idx) {
+  function doSetIn(obj, path2, val, idx) {
     let newValue;
-    const key = path[idx];
-    if (idx === path.length - 1) {
+    const key = path2[idx];
+    if (idx === path2.length - 1) {
       newValue = val;
     } else {
-      const nestedObj = isObject(obj) && isObject(obj[key]) ? obj[key] : typeof path[idx + 1] === "number" ? [] : {};
-      newValue = doSetIn(nestedObj, path, val, idx + 1);
+      const nestedObj = isObject(obj) && isObject(obj[key]) ? obj[key] : typeof path2[idx + 1] === "number" ? [] : {};
+      newValue = doSetIn(nestedObj, path2, val, idx + 1);
     }
     return set(obj, key, newValue);
   }
@@ -5872,10 +5854,10 @@ var require_timm = __commonJS((exports2) => {
     const nextVal = fnUpdate(prevVal);
     return set(obj, key, nextVal);
   }
-  function updateIn(obj, path, fnUpdate) {
-    const prevVal = getIn(obj, path);
+  function updateIn(obj, path2, fnUpdate) {
+    const prevVal = getIn(obj, path2);
     const nextVal = fnUpdate(prevVal);
-    return setIn(obj, path, nextVal);
+    return setIn(obj, path2, nextVal);
   }
   function merge(a, b, c, d, e, f, ...rest) {
     return rest.length ? doMerge.call(null, false, false, a, b, c, d, e, f, ...rest) : doMerge(false, false, a, b, c, d, e, f);
@@ -5883,8 +5865,8 @@ var require_timm = __commonJS((exports2) => {
   function mergeDeep(a, b, c, d, e, f, ...rest) {
     return rest.length ? doMerge.call(null, false, true, a, b, c, d, e, f, ...rest) : doMerge(false, true, a, b, c, d, e, f);
   }
-  function mergeIn(a, path, b, c, d, e, f, ...rest) {
-    let prevVal = getIn(a, path);
+  function mergeIn(a, path2, b, c, d, e, f, ...rest) {
+    let prevVal = getIn(a, path2);
     if (prevVal == null)
       prevVal = {};
     let nextVal;
@@ -5893,7 +5875,7 @@ var require_timm = __commonJS((exports2) => {
     } else {
       nextVal = doMerge(false, false, prevVal, b, c, d, e, f);
     }
-    return setIn(a, path, nextVal);
+    return setIn(a, path2, nextVal);
   }
   function omit(obj, attrs) {
     const omitList = Array.isArray(attrs) ? attrs : [attrs];
@@ -7550,9 +7532,9 @@ var require_decoder = __commonJS((exports2, module2) => {
       return a < 0 ? 0 : a > 255 ? 255 : a;
     }
     constructor.prototype = {
-      load: function load(path) {
+      load: function load(path2) {
         var xhr = new XMLHttpRequest();
-        xhr.open("GET", path, true);
+        xhr.open("GET", path2, true);
         xhr.responseType = "arraybuffer";
         xhr.onload = function() {
           var data = new Uint8Array(xhr.response || xhr.mozResponseArrayBuffer);
@@ -20470,14 +20452,14 @@ var require_gifutil = __commonJS((exports2) => {
     jimpImage.bitmap.data = bitmapImageToShare.bitmap.data;
     return jimpImage;
   };
-  exports2.write = function(path, frames, spec, encoder) {
+  exports2.write = function(path2, frames, spec, encoder) {
     encoder = encoder || defaultCodec;
-    const matches = path.match(/\.[a-zA-Z]+$/);
+    const matches = path2.match(/\.[a-zA-Z]+$/);
     if (matches !== null && INVALID_SUFFIXES.includes(matches[0].toLowerCase())) {
-      throw new Error(`GIF '${path}' has an unexpected suffix`);
+      throw new Error(`GIF '${path2}' has an unexpected suffix`);
     }
     return encoder.encodeGif(frames, spec).then((gif) => {
-      return _writeBinary(path, gif.buffer).then(() => {
+      return _writeBinary(path2, gif.buffer).then(() => {
         return gif;
       });
     });
@@ -20539,9 +20521,9 @@ var require_gifutil = __commonJS((exports2) => {
       }
     }
   }
-  function _readBinary(path) {
+  function _readBinary(path2) {
     return new Promise((resolve, reject) => {
-      fs.readFile(path, (err, buffer) => {
+      fs.readFile(path2, (err, buffer) => {
         if (err) {
           return reject(err);
         }
@@ -20549,9 +20531,9 @@ var require_gifutil = __commonJS((exports2) => {
       });
     });
   }
-  function _writeBinary(path, buffer) {
+  function _writeBinary(path2, buffer) {
     return new Promise((resolve, reject) => {
-      fs.writeFile(path, buffer, (err) => {
+      fs.writeFile(path2, buffer, (err) => {
         if (err) {
           return reject(err);
         }
@@ -28349,7 +28331,7 @@ var require_types = __commonJS((exports2, module2) => {
 
 // node_modules/mime/mime.js
 var require_mime2 = __commonJS((exports2, module2) => {
-  var path = require("path");
+  var path2 = require("path");
   var fs = require("fs");
   function Mime() {
     this.types = Object.create(null);
@@ -28379,8 +28361,8 @@ var require_mime2 = __commonJS((exports2, module2) => {
     this.define(map);
     this._loading = null;
   };
-  Mime.prototype.lookup = function(path2, fallback) {
-    var ext = path2.replace(/^.*[\.\/\\]/, "").toLowerCase();
+  Mime.prototype.lookup = function(path3, fallback) {
+    var ext = path3.replace(/^.*[\.\/\\]/, "").toLowerCase();
     return this.types[ext] || fallback || this.default_type;
   };
   Mime.prototype.extension = function(mimeType) {
@@ -28434,7 +28416,7 @@ var require_is_binary = __commonJS((exports2, module2) => {
 var require_load_bmfont = __commonJS((exports2, module2) => {
   var fs = require("fs");
   var url = require("url");
-  var path = require("path");
+  var path2 = require("path");
   var request = require_phin_compiled();
   var parseASCII = require_parse_bmfont_ascii();
   var parseXML = require_lib2();
@@ -29707,6 +29689,7 @@ var require_formatDistance = __commonJS((exports2) => {
 });
 
 // lambda/ago.js
+var path = require("path");
 var Jimp = require_dist32();
 
 // node_modules/date-fns/esm/_lib/requiredArgs/index.js
@@ -30297,6 +30280,7 @@ function getTimezoneOffsetInMilliseconds(dirtyDate) {
 // lambda/ago.js
 var formatDistance2 = require_formatDistance();
 var capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
+var currentDir = process.env.LAMBDA_TASK_ROOT;
 exports.handler = async (event) => {
   if (event.queryStringParameters.time === void 0) {
     return {
@@ -30305,7 +30289,7 @@ exports.handler = async (event) => {
     };
   }
   const mime = "image/png";
-  const font = await Jimp.loadFont(require.resolve("open-sans-14-black.fnt"));
+  const font = await Jimp.loadFont(path.join(currentDir, "open-sans-14-black.fnt"));
   const text = capitalize(formatDistance2(new Date(), new Date(+event.queryStringParameters.time).getTime())) + " ago";
   const width = Jimp.measureText(font, text);
   const height = Jimp.measureTextHeight(font, text);
