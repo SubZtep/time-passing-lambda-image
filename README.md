@@ -1,5 +1,11 @@
 # Time Passing Lambda Image
 
+> :warning:
+>
+> The current text printing library is **very inefficient** and easily generates 2MB+ bitmap on the fly. **Refactor is on the way!**
+
+---
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/41464f3c-f6ff-48b7-a11e-d9fd7fae7fd0/deploy-status)](https://app.netlify.com/sites/time-passing/deploys)
 
 Netlify Lambda Function that calculates the distance from a given date and now in words. Display the text on a PNG image and returns in base64 encoded binary format.

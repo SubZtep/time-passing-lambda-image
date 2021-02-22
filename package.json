@@ -1,6 +1,6 @@
 {
   "name": "time-passing-lambda-image",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Netlify Function that calculating the distance from a given date and now in words — rendered on a base64 image",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/SubZtep/time-passing-lambda-image#readme",
   "dependencies": {
-    "date-fns": "^2.16.1",
+    "date-fns": "^2.17.0",
     "jimp": "^0.16.1"
   }
 }

@@ -1,6 +1,6 @@
 const Jimp = require("jimp")
 const formatDistance = require("date-fns/formatDistance")
-const capitalize = str => str.charAt(0).toUpperCase() + str.slice(1);
+const capitalize = str => str.charAt(0).toUpperCase() + str.slice(1)
 
 exports.handler = async event => {
   if (event.queryStringParameters.time === undefined) {
