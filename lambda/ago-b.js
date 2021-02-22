@@ -30281,7 +30281,6 @@ function getTimezoneOffsetInMilliseconds(dirtyDate) {
 // lambda/ago.js
 var formatDistance2 = require_formatDistance();
 var capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
-var currentDir = process.env.LAMBDA_TASK_ROOT;
 exports.handler = async (event) => {
   if (event.queryStringParameters.time === void 0) {
     return {
@@ -30290,13 +30289,9 @@ exports.handler = async (event) => {
     };
   }
   const mime = "image/png";
-  return {
-    statusCode: 400,
-    body: fs.readdirSync(path.join(process.env.PWD, "..")).join(" - ") + fs.readFileSync(path.join(currentDir, "src", "open-sans-14-black.fnt"))
-  };
-  console.log(path.join(currentDir, "open-sans-14-black.fnt"));
-  console.log(process.env);
-  const font = await Jimp.loadFont(path.join(currentDir, "open-sans-14-black.fnt"));
+  const fileName = "./open-sans-14-black.fnt";
+  const resolved = process.env.LAMBDA_TASK_ROOT ? path.resolve(process.env.LAMBDA_TASK_ROOT, fileName) : path.resolve(__dirname, fileName);
+  const font = await Jimp.loadFont(resolved);
   const text = capitalize(formatDistance2(new Date(), new Date(+event.queryStringParameters.time).getTime())) + " ago";
   const width = Jimp.measureText(font, text);
   const height = Jimp.measureTextHeight(font, text);
