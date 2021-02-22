@@ -30289,7 +30289,7 @@ exports.handler = async (event) => {
     };
   }
   const mime = "image/png";
-  const fileName = "./open-sans-14-black.fnt";
+  const fileName = "./lambda/open-sans-14-black.fnt";
   const resolved = process.env.LAMBDA_TASK_ROOT ? path.resolve(process.env.LAMBDA_TASK_ROOT, fileName) : path.resolve(__dirname, fileName);
   const font = await Jimp.loadFont(resolved);
   const text = capitalize(formatDistance2(new Date(), new Date(+event.queryStringParameters.time).getTime())) + " ago";
